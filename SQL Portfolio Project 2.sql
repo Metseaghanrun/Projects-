@@ -23,14 +23,6 @@ SELECT
   FROM Human_Resources_Data
   WHERE Termd = 0;
 
-
--- Count the number of employees in each department
-SELECT Department, COUNT (*) AS Emp_Department 
-FROM Human_Resources_Data
-WHERE Termd = 0
-GROUP BY Department
-ORDER BY Emp_Department DESC;
-
 --Average Tenure of employement for employees who have been terminated in ceach department
 SELECT  Department,
 (AVG(DATEDIFF(year,DateofHire, DateofTermination)))AS Avg_employment_year 
